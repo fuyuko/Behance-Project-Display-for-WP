@@ -1,0 +1,35 @@
+#fuyuko-behance-wp .main-content{
+    width: 70%;
+    min-width: 400px;
+    float:  left;
+    padding: 10px 5px;
+}
+
+#fuyuko-behance-wp .side-bar{
+    width:  30%;
+    min-width:  200px;
+    margin-left:  70%;
+    padding: 10px 5px;
+}
+
+#fuyuko-behance-wp .sidearea{
+    padding-top: 0 !important;
+    padding-bottom: 5px;
+    width:  95%;    
+}
+
+#fuyuko-behance-wp .sidearea p{
+    line-height: 1.4em;
+}
+
+@media only screen and (max-width: 767px) {
+    #fuyuko-behance-wp .main-content{
+        width: 100%;
+        float: none;
+    }
+    #fuyuko-behance-wp .side-bar{
+        width: 100%;
+        margin-left: 0;
+    }
+
+}
