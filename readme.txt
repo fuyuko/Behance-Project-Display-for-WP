@@ -3,7 +3,7 @@ Contributors: fuyuko
 Donate link: http://wp-behance.fuyuko.net/
 Tags: portfolio, project, Behance
 Requires at least: 3.7.1
-Tested up to: 3.7.1
+Tested up to: 3.8
 Stable tag: 
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -43,7 +43,19 @@ Pleaes visit [FuyukoBehanceWP](http://wp-behance.fuyuko.net/ "the plugin webiste
 
 == Changelog ==
 
+= 0.3 =
+*Alpha - third release (second release to public)
+*minor layout adjustment & content update to the plugin's admin page
+*shortcode now has "display" attribute which allows to output different layout code. Current values accepted for the display attribute is "default" and "alpha02". "default" or omission of the display attribute will output the most recent version of the layout code. "alpha02" output the code for version 0.2 (alpha). 
+*css update 1 - now there is a class associated for #behance-projects container. "default" class for default layout "alpha02" class for alpha02 layout. 
+*css update 2 - alpha02: changed the #behance-projects container to be "flex" display type from "table" display type. Impoved the layout 
+
+= 0.2 =
+*Alpha - second release (first release to public)
+*moved the css link insert location of fuyuko_behance_style.css (priority = 0)
+*added break lines between views, appreciatiosns, comments
+
 = 0.1 =
-*Beta - first release
+*Alpha - first release
 *Manually updates the project data from Behance by clicking a button in the plugin's setting page.
 *Default layout design is implemented in fuyuko_behance_style.css (which works well with Twentythirteen theme)

@@ -47,22 +47,24 @@
         <p>This plugin will extract the specified user's project information (public data only) through Behance API and display in a page or post
             by using a shortcode: <pre>[fuyukoprojects]</pre></p>
         <p>For those who are not familiar with shortcode, 
-            please <a href="http://codex.wordpress.org/Shortcode_API" alt="Shortcode API" target="_blank">read this article</a>.)</p>
+            please <a href="http://codex.wordpress.org/Shortcode_API" alt="Shortcode API" target="_blank">read this article</a>.</p>
 			
 	    <form name="fuyuko_behance_wp_form" method="post" action="<?php echo str_replace( '%7E', '~', $_SERVER['REQUEST_URI']); ?>">
             <!-- Determine if the update setting button is pressed or not-->
 		    <input type="hidden" name="fuyuko_behance_wp_setting_updated" value="Y">
 
             <!--Behance Account Setting Form Fields-->
-		    <?php    echo "<h3>" . __( 'Behance Account Setting', 'fuyuko_net' ) . "</h3>"; ?>
-		    <p><?php _e("Your Behance Username: " ); ?><input type="text" name="fuyuko_behance_wp_username" value="<?php echo $fuyuko_behance_wp_username; ?>" size="20"><?php _e(" (ex: your_username)" ); ?></p>
-			
+		    <?php    echo "<h2>" . __( 'Plugin Setting', 'fuyuko_net' ) . "</h2>"; ?>
+		    <p><?php _e("Behance Username: " ); ?><input type="text" name="fuyuko_behance_wp_username" value="<?php echo $fuyuko_behance_wp_username; ?>" size="20"><?php _e(" (ex: your_username)" ); ?></p>
+			<!--
+                <p><?php _e("Select Layout Design: " ); ?></p>
+            -->
 		    <p class="submit">
-		    <input type="submit" name="Submit" value="<?php _e('Update Behance Account Info', 'fuyuko_net' ) ?>" />
+		    <input type="submit" name="Submit" value="<?php _e('Update Plugin Setting', 'fuyuko_net' ) ?>" />
 		    </p>
 	    </form>
 
-        <?php    echo "<h3>" . __( 'Update Your Project Contents', 'fuyuko_net' ) . "</h3>"; ?>
+        <?php    echo "<h2>" . __( 'Update Your Project Contents', 'fuyuko_net' ) . "</h2>"; ?>
         <p>Whenever you modify your project(s) at Behance site, you need to press "Update Project" button below to update the project contents on your Wordpress site.</p>
         <form name="fuyuko_behance_wp_update_form" method="post" action="<?php echo str_replace( '%7E', '~', $_SERVER['REQUEST_URI']); ?>">
             <!-- Determine if the update setting button is pressed or not-->
@@ -75,6 +77,15 @@
 
     <!--Side Bar Content-->
     <div class="side-bar">
+		<div class="sidearea metabox-holder postbox">
+            <h3><span>The plugin's website</span></h3>
+            <p>For documentation and other information about this plugin, please visit <a href="http://wp-behance.fuyuko.net/" target="_blank" >wp-behance.fuyuko.net</a>.</p>
+			<ul>
+				<li><a href="http://wp-behance.fuyuko.net/documentation/" target="_blank">Documentation</a>
+				<li><a href="http://wp-behance.fuyuko.net/Community/" target="_blank">Plugin Forum</a> (for help and support)
+				<li><a href="http://wp-behance.fuyuko.net/category/change-log/" target="_blank">Change Log</a>
+			</ul>			
+        </div>
         <div class="sidearea metabox-holder postbox">
             <h3><span>Please Consider Donating</span></h3>
             <p>This plugin is developed and maintained without any source of funding (other than out of my pocket). Please consider donating (any amount will do) to support maintaining this free plugin.</p>
@@ -91,7 +102,8 @@
         </div>
         <div class="sidearea metabox-holder postbox">
             <h3><span>Credits</span></h3>
-            <img src="<?php get_bloginfo('wpurl');?>/wp-content/plugins/fuyuko-behance/images/PbyBehance-vertical-145px.png" alt="Powered by Behance" />
+            <p>This plugin would not be possible without Behance's "easy-to-use" API. And more importantly, Behance made my portfolio management a breeze! For that I would like to thank Behance team for providing us their wonderful web application. </p>
+			<img src="<?php get_bloginfo('wpurl');?>/wp-content/plugins/fuyuko-behance/images/PbyBehance-vertical-145px.png" alt="Powered by Behance"  />
         </div>
 
     </div>

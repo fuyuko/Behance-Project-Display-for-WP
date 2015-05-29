@@ -1,3 +1,8 @@
+#fuyuko-behance-wp ul{
+	list-style: disc outside none;
+	padding:0 30px;
+}
+
 #fuyuko-behance-wp .main-content{
     width: 70%;
     min-width: 400px;
@@ -8,7 +13,7 @@
 #fuyuko-behance-wp .side-bar{
     width:  30%;
     min-width:  200px;
-    margin-left:  70%;
+    margin-left:  71%;
     padding: 10px 5px;
 }
 
@@ -20,6 +25,11 @@
 
 #fuyuko-behance-wp .sidearea p{
     line-height: 1.4em;
+	padding: 10px;
+}
+
+#fuyuko-behance-wp .postbox h3 {
+cursor: auto;
 }
 
 @media only screen and (max-width: 767px) {

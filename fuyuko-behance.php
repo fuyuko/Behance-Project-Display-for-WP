@@ -33,7 +33,7 @@ function fuyuko_behance_admin_actions() {
 add_action('admin_menu', 'fuyuko_behance_admin_actions'); 
 
 
-//add stylesheet - used inside shortcode function
+//add stylesheet
 function fuyuko_behance_stylesheet()
 {
 	// Register the style like this for a plugin:
@@ -44,25 +44,47 @@ function fuyuko_behance_stylesheet()
 }
 add_action( 'wp_enqueue_scripts', 'fuyuko_behance_stylesheet', 0);
 
-//shortcode to display project contents
-function fuyuko_behance_shortcode(){
-    //apply stylesheet for the shortcode
-  
-
+/* 	Shortcode to display project contents
+**	Attribute Names: display
+**  Possible attribute Values for display: default, alpha02
+*/
+function fuyuko_behance_shortcode($atts){
+    
+	extract( shortcode_atts( array(
+		'display' => 'default',
+	), $atts ) );
+	
+	//apply stylesheet for the shortcode
+	
     $string = get_option('fuyuko_behance_wp_projects');
     $json_data=json_decode($string,true);
-    $output = '<div id="behance-projects">'. "\n";
+    $output = '<div id="behance-projects" class="' . $display . '">'. "\n";
 
     foreach ($json_data['projects'] as $project) {
-        $output .= '<div class="behanceProject">' . "\n";
-        $output .= '<div class="projectName"><a href="' . $project['url'] . '" target="_blank" >' . $project['name'] . '</a></div>' . "\n";
-        $output .= '<div class="projectThumbnail"><a href="' . $project['url'] . '" target="_blank" >' . '<img src="' . $project['covers']['202'] . '" /></a></div>' . "\n";
-        $output .= '<div class="projectStat">';
-        $output .= 'views:' . $project['stats']['views'];
-        $output .= '<br/>  appreciations:' . $project['stats']['appreciations'];
-        $output .= '<br/>  comments:' . $project['stats']['comments'];
-        $output .= "</div>\n";
-        $output .= '</div>' . "\n";
+	
+		
+		if(strcmp($display, "default") == 0){ //if "display" attribute is NOT set = default layout code
+			$output .= '<div class="behanceProject">' . "\n";
+			$output .= '<div class="projectName"><a href="' . $project['url'] . '" target="_blank" >' . $project['name'] . '</a></div>' . "\n";
+			$output .= '<div class="projectThumbnail"><a href="' . $project['url'] . '" target="_blank" >' . '<img src="' . $project['covers']['202'] . '" /></a></div>' . "\n";
+			$output .= '<div class="projectStat">';
+			$output .= '<div class="projectStatView"><label>views</label>' . $project['stats']['views'] . "</div>\n";
+			$output .= '<div class="projectStatAppreciation"><label>appreciations</label>' . $project['stats']['appreciations'] . "</div>\n";
+			$output .= '<div class="projectStatComment"><label>comments</label>' . $project['stats']['comments'] . "</div>\n";
+			$output .= "</div>\n";
+			$output .= '</div>' . "\n";
+		}//end of default layout code
+		else if(strcmp($display, "alpha02") == 0){ //if "display" attribute is set to "alpha02" = default layout for version 0.2 alpha
+			$output .= '<div class="behanceProject alpha02">' . "\n";
+			$output .= '<div class="projectName"><a href="' . $project['url'] . '" target="_blank" >' . $project['name'] . '</a></div>' . "\n";
+			$output .= '<div class="projectThumbnail"><a href="' . $project['url'] . '" target="_blank" >' . '<img src="' . $project['covers']['202'] . '" /></a></div>' . "\n";
+			$output .= '<div class="projectStat">';
+			$output .= 'views:' . $project['stats']['views'];
+			$output .= '<br/>  appreciations:' . $project['stats']['appreciations'];
+			$output .= '<br/>  comments:' . $project['stats']['comments'];
+			$output .= "</div>\n";
+			$output .= '</div>' . "\n";		
+		}
 	}
     $output .= '</div>' . "\n";
 
