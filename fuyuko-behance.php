@@ -42,11 +42,12 @@ function fuyuko_behance_stylesheet()
 	//enqueue the style:
 	wp_enqueue_style( 'fuyuko-behance-wp-style' );
 }
+add_action( 'wp_enqueue_scripts', 'fuyuko_behance_stylesheet', 0);
 
 //shortcode to display project contents
 function fuyuko_behance_shortcode(){
     //apply stylesheet for the shortcode
-    fuyuko_behance_stylesheet();
+  
 
     $string = get_option('fuyuko_behance_wp_projects');
     $json_data=json_decode($string,true);
@@ -58,10 +59,10 @@ function fuyuko_behance_shortcode(){
         $output .= '<div class="projectThumbnail"><a href="' . $project['url'] . '" target="_blank" >' . '<img src="' . $project['covers']['202'] . '" /></a></div>' . "\n";
         $output .= '<div class="projectStat">';
         $output .= 'views:' . $project['stats']['views'];
-        $output .= '  appreciations:' . $project['stats']['appreciations'];
-        $output .= '  comments:' . $project['stats']['comments'];
-        $output .= "</div> <!--end of projectStat class -->\n";
-        $output .= '</div> <!-- end of behanceProject class -->' . "\n";
+        $output .= '<br/>  appreciations:' . $project['stats']['appreciations'];
+        $output .= '<br/>  comments:' . $project['stats']['comments'];
+        $output .= "</div>\n";
+        $output .= '</div>' . "\n";
 	}
     $output .= '</div>' . "\n";
 
