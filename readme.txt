@@ -1,18 +1,18 @@
-=== Fuyuko Project Display Plugin for WP - Powered by Behance ===
+=== WP Behance Project Display ===
 Contributors: fuyuko
-Donate link: http://wp-behance.fuyuko.net/
+Donate link: http://fuyuko.net/donation/
 Tags: portfolio, project, Behance
 Requires at least: 3.7.1
-Tested up to: 3.8
+Tested up to: 4.2.2
 Stable tag: 
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-a WP plugin to showcase your Behance projects on your WP site.
+a plugin to showcase your Behance projects on your WP site.
 
 == Description ==
 
-Fuyuko Project Display Plugin for WP - Powered by Behance is a plugin to allow Projects hosted on behance.com to be displayed within a WP site.
+WP Behance Project Display is a plugin to allow Projects hosted on behance.com to be displayed within a WP site.
 
 The plugin downloads a specified Behance user's project information using Behance API in JSON format, and generates HTML format Project list. 
 
@@ -42,6 +42,15 @@ Pleaes visit [FuyukoBehanceWP](http://wp-behance.fuyuko.net/ "the plugin webiste
 1. Admin page for the plugin (under "Setting" in Admin menu).
 
 == Changelog ==
+= 0.4 =
+*Beta release
+*UPDATE - Plugin name has been changed tp WP Behance Project Display from Fuyuko Project Display Plugin for WP
+*UPDATE - ow the content is written in HTML5
+*UPDATE - New layout design (need to have awesome font installed)
+*UPDATE - Stylesheet now generated using Compass (SCSS)
+*UPDATE - Shortcode for the project desplay changed from "fuyukoprojects" to "wpbehance"
+*NEW - Settings link added in the installed plugin page
+*NEW - The user must obtain Behance API Key to use this plugin. The key must be entered and saved in the plugin setting page.
 
 = 0.3 =
 *Alpha - third release (second release to public)
