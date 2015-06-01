@@ -42,6 +42,10 @@ Pleaes visit [WP Behance Display Project](http://fuyuko.net/wordpress-plugins/wp
 1. Admin page for the plugin (under "Setting" in Admin menu).
 
 == Changelog ==
+= 0.4.2 =
+*Beta release - Minor fixes
+*Fix - Fixed "Font Awesome" installation. Now uses enqueue_style() & only enqueued when shortcode is present.
+
 = 0.4.1 =
 *Beta release - Minor fixes
 *Fix - Add "Awesome Font" to the plugin 

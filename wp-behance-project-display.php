@@ -4,7 +4,7 @@
     Plugin URI: http://fuyuko.net/wordpress-plugins/wp-behance-project-display/
     Description: Plugin for displaying  your Behance projects in a WordPress site using a shortcode
     Author: Fuyuko Gratton 
-    Version: 0.4.1
+    Version: 0.4.2
     Author URI: http://fuyuko-net/
     */ 
     
@@ -21,13 +21,7 @@ function wp_behance_project_display_deactivate(){
    
 } 
 
-//enable awesome font used in the project display page
-add_action('wp_head', 'wp_behance_project_display_head');
-function wp_behance_project_display_head{
-?>
-	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-<?php
-}
+
 
 /**
  * BACKEND INSTALLED PLUGIN PAGE - additional links below the plugin title
@@ -71,7 +65,9 @@ function wp_behance_project_display_style_stylesheet()
 **/
 add_shortcode('wpbehance', 'wp_behance_project_display_shortcode');
 function wp_behance_project_display_shortcode($atts){
-    
+    //enqueue awesome font stylesheet
+	wp_enqueue_style( 'font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css' );
+
 	extract( shortcode_atts( array(
 		'display' => 'default',
 	), $atts ) );
@@ -84,7 +80,7 @@ function wp_behance_project_display_shortcode($atts){
 
     foreach ($json_data['projects'] as $project) {
 		$output .= '<article class="behanceProject">' . "\n";
-		$output .= '<figure class="projectThumbnail"><a href="' . $project['url'] . '" target="_blank" >' . '<img src="' . $project['covers']['202'] . '" /></a></figure>' . "\n";
+		$output .= '<figure class="projectThumbnail"><a href="' . $project['url'] . '" target="_blank" >' . '<img src="' . $project['covers']['404'] . '" /></a></figure>' . "\n";
 		$output .= '<h1 class="projectName"><a href="' . $project['url'] . '" target="_blank" >' . $project['name'] . '</a></h1>' . "\n";
 		$output .= '<footer class="projectStat">';
 		$output .= '<div class="projectStatView"><i class="fa fa-eye"></i> ' . $project['stats']['views'] . "</div>\n";
