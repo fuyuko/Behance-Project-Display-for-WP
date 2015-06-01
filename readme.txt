@@ -8,7 +8,7 @@ Stable tag:
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-a plugin to showcase your Behance projects on your WP site.
+A plugin to showcase your Behance projects on your WP site.
 
 == Description ==
 
@@ -31,24 +31,30 @@ Starndard Wordpress Plugin install.
 1. Upload `fuyuko-behance-wp.zip` using Wordpress plugin upload feature, or unzip the file and upload the content to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
 3. Configure the plugin by "Project Display" menu item under setting in the admin menu
-4. Place a shortcode `[fuyukoprojects]` in a page or post where you want to display your projects hosted at Behance
+4. Place a shortcode `[wpbehance]` in a page or post where you want to display your projects hosted at Behance
 
 == Frequently Asked Questions ==
 
-Pleaes visit [FuyukoBehanceWP](http://wp-behance.fuyuko.net/ "the plugin webiste") for more information.
+Pleaes visit [WP Behance Display Project](http://fuyuko.net/wordpress-plugins/wp-behance-project-display/ "the plugin info page") for more information.
 
 == Screenshots ==
 
 1. Admin page for the plugin (under "Setting" in Admin menu).
 
 == Changelog ==
+= 0.4.1 =
+*Beta release - Minor fixes
+*Fix - Add "Awesome Font" to the plugin 
+*Fix - Corrected readme.txt
+
+
 = 0.4 =
 *Beta release
 *UPDATE - Plugin name has been changed tp WP Behance Project Display from Fuyuko Project Display Plugin for WP
 *UPDATE - ow the content is written in HTML5
 *UPDATE - New layout design (need to have awesome font installed)
 *UPDATE - Stylesheet now generated using Compass (SCSS)
-*UPDATE - Shortcode for the project desplay changed from "fuyukoprojects" to "wpbehance"
+*UPDATE - Shortcode for the project display changed from "fuyukoprojects" to "wpbehance"
 *NEW - Settings link added in the installed plugin page
 *NEW - The user must obtain Behance API Key to use this plugin. The key must be entered and saved in the plugin setting page.
 

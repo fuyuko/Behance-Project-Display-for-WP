@@ -4,24 +4,30 @@
     Plugin URI: http://fuyuko.net/wordpress-plugins/wp-behance-project-display/
     Description: Plugin for displaying  your Behance projects in a WordPress site using a shortcode
     Author: Fuyuko Gratton 
-    Version: 0.4
+    Version: 0.4.1
     Author URI: http://fuyuko-net/
     */ 
     
 //activation setup
-register_activation_hook( __FILE__, 'wp_behance_project_desplay_' );
-function wp_behance_project_desplay_activate(){
+register_activation_hook( __FILE__, 'wp_behance_project_diplay_' );
+function wp_behance_project_display_activate(){
     update_option('behance_api','');  //FnkCCad9zds37g3lW5RXSMI78cvwo6gV
 } 
 
 
 //deactivation setup
-register_deactivation_hook( __FILE__, 'wp_behance_project_desplay_deactivate' );
-function wp_behance_project_desplay_deactivate(){
+register_deactivation_hook( __FILE__, 'wp_behance_project_display_deactivate' );
+function wp_behance_project_display_deactivate(){
    
 } 
 
-
+//enable awesome font used in the project display page
+add_action('wp_head', 'wp_behance_project_display_head');
+function wp_behance_project_display_head{
+?>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<?php
+}
 
 /**
  * BACKEND INSTALLED PLUGIN PAGE - additional links below the plugin title
