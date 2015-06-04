@@ -4,21 +4,33 @@
     Plugin URI: http://fuyuko.net/wordpress-plugins/wp-behance-project-display/
     Description: Plugin for displaying  your Behance projects in a WordPress site using a shortcode
     Author: Fuyuko Gratton 
-    Version: 0.4.2
+    Version: 0.4.3
     Author URI: http://fuyuko-net/
     */ 
     
 //activation setup
-register_activation_hook( __FILE__, 'wp_behance_project_diplay_' );
+register_activation_hook( __FILE__, 'wp_behance_project_display_activate' );
+add_action('wp_behance_project_display_daily_event', 'wp_behance_project_display_do_daily');
 function wp_behance_project_display_activate(){
-    update_option('behance_api','');  //FnkCCad9zds37g3lW5RXSMI78cvwo6gV
+    update_option('behance_api','');  
+    wp_schedule_even(time(), 'daily', 'wp_behance_project_display_daily_event');
 } 
+function wp_behance_project_display_do_daily(){
+	//sync projects from behance
+	$behance_username = get_option('behance_username');
+    $behance_api = get_option('behance_api');
+
+    $behance_url = "http://www.behance.net/v2/users/" . $behance_username . "/projects?api_key=" . $behance_api;
+    $temp_file_location = download_url($behance_url);
+    $file_content = file_get_contents($temp_file_location);
+    update_option('wp_behance_projects', $file_content);
+}
 
 
 //deactivation setup
 register_deactivation_hook( __FILE__, 'wp_behance_project_display_deactivate' );
 function wp_behance_project_display_deactivate(){
-   
+   wp_clear_scheduled_hook('wp_behance_project_display_daily_event');
 } 
 
 

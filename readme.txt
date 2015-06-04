@@ -42,6 +42,11 @@ Pleaes visit [WP Behance Display Project](http://fuyuko.net/wordpress-plugins/wp
 1. Admin page for the plugin (under "Setting" in Admin menu).
 
 == Changelog ==
+= 0.4.3 =
+*Beta release - Minor updates
+*NEW - The projects data is synchronized with the data on Behance site on daily basis automatically.
+*UPDATE - Screenshot images updated.
+
 = 0.4.2 =
 *Beta release - Minor fixes
 *Fix - Fixed "Font Awesome" installation. Now uses enqueue_style() & only enqueued when shortcode is present.
