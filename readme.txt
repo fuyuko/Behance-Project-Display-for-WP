@@ -42,6 +42,10 @@ Pleaes visit [WP Behance Display Project](http://fuyuko.net/wordpress-plugins/wp
 1. Admin page for the plugin (under "Setting" in Admin menu).
 
 == Changelog ==
+= 0.4.4 =
+*Beta release - Minor fixes
+*Fix - broken wp_schedule_event function updated 
+
 = 0.4.3 =
 *Beta release - Minor updates
 *NEW - The projects data is synchronized with the data on Behance site on daily basis automatically.

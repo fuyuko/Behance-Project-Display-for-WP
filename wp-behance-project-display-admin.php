@@ -69,7 +69,7 @@
 	    </form>
 
         <?php    echo "<h2>" . __( 'Sync Behance Projects', 'fuyuko_net' ) . "</h2>"; ?>
-        <p>Whenever you modify your project(s) at Behance site, you need to press "Sync Projects" button below to update the project contents on your Wordpress site.</p>
+        <p>Your projects are synchronized on daily basis automatically. If you would like to update the projects immediately, press "Sync Projects" button below.</p>
         <form name="fuyuko_behance_wp_update_form" method="post" action="<?php echo str_replace( '%7E', '~', $_SERVER['REQUEST_URI']); ?>">
             <!-- Determine if the update setting button is pressed or not-->
 		    <input type="hidden" name="wp_behance_project_update_project" value="Y">	
